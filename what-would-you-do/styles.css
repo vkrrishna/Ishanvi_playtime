@@ -46,6 +46,26 @@ button {
   padding: 22px 0 28px;
 }
 
+.home-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 6px 18px rgba(24, 38, 64, 0.08);
+  color: var(--blue);
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.home-link:hover,
+.home-link:focus-visible {
+  border-color: rgba(43, 108, 176, 0.62);
+  outline: none;
+}
+
 .top-band {
   display: flex;
   align-items: end;
