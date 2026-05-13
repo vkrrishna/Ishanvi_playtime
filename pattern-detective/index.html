@@ -1,1 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pattern Detective</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <a class="home-link" href="../index.html">Back to Home</a>
 
+      <section class="top-band">
+        <div>
+          <p class="eyebrow">Activity 5</p>
+          <h1>Pattern Detective</h1>
+        </div>
+        <div class="stats" aria-live="polite">
+          <span><strong id="scoreCount">0</strong> score</span>
+          <span><strong id="roundCount">1</strong>/<strong id="totalRounds">0</strong> patterns</span>
+        </div>
+      </section>
+
+      <section class="controls" aria-label="Activity controls">
+        <label>
+          Pattern type
+          <select id="typeSelect">
+            <option value="all">All patterns</option>
+            <option value="numbers">Numbers</option>
+            <option value="shapes">Shapes</option>
+            <option value="colors">Colors</option>
+            <option value="sounds">Sounds</option>
+          </select>
+        </label>
+        <button id="newPatternBtn" type="button">New Pattern</button>
+        <button id="playSoundBtn" type="button">Play Sounds</button>
+        <button id="showAnswerBtn" type="button">Show Answer</button>
+      </section>
+
+      <section class="workspace">
+        <section class="play-panel" aria-labelledby="promptTitle">
+          <div class="prompt-row">
+            <div>
+              <p id="patternType" class="round-type">Numbers</p>
+              <h2 id="promptTitle">What comes next?</h2>
+            </div>
+            <span id="statusBadge" class="status-badge">Choose one</span>
+          </div>
+
+          <div id="patternTrack" class="pattern-track" aria-label="Pattern"></div>
+          <div id="choiceGrid" class="choice-grid" aria-label="Answer choices"></div>
+          <div id="feedback" class="feedback" aria-live="polite">Look for what repeats or changes.</div>
+        </section>
+
+        <aside class="side-panel">
+          <section class="helper-panel">
+            <h2>Detective Clues</h2>
+            <ul class="clue-list">
+              <li>Does it repeat?</li>
+              <li>Does it grow by the same amount?</li>
+              <li>Does color, shape, or sound switch back and forth?</li>
+            </ul>
+          </section>
+
+          <section class="maker-panel">
+            <h2>Make a Pattern</h2>
+            <form id="customForm">
+              <label>
+                Pattern items
+                <input id="customItems" type="text" placeholder="red, blue, red, blue" />
+              </label>
+              <label>
+                Missing answer
+                <input id="customAnswer" type="text" placeholder="red" />
+              </label>
+              <label>
+                Hint
+                <input id="customHint" type="text" placeholder="It repeats red, blue." />
+              </label>
+              <button type="submit">Use My Pattern</button>
+            </form>
+          </section>
+
+          <section class="journal-panel">
+            <div class="panel-heading">
+              <h2>Solved Patterns</h2>
+              <button id="clearJournalBtn" type="button">Clear</button>
+            </div>
+            <ul id="journalList" class="journal-list"></ul>
+          </section>
+        </aside>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
